@@ -1,0 +1,14 @@
+<h2 *ngIf="contentItem && contentItem.title else elseBlockNameIsWhateverYouWant">
+  {{ contentItem?.title }}
+</h2>
+
+<img *ngIf="contentItem && contentItem.imgURL else elseBlockNameIsWhateverYouWant" [src]="contentItem.imgURL" (click)="myfun()">
+<p class="title" *ngIf="contentItem && contentItem.title; else elseBlockNameIsWhateverYouWant">{{contentItem?.title}}</p>
+
+<div class="type"  *ngIf="contentItem && contentItem.type else elseBlockNameIsWhateverYouWant">{{contentItem?.type}}</div>
+<div class="title"  *ngIf="contentItem && contentItem.title else elseBlockNameIsWhateverYouWant">{{contentItem?.title}}</div>
+<div class="tags"  *ngIf="contentItem && contentItem.creator else elseBlockNameIsWhateverYouWant">{{contentItem?.tags}}</div>
+
+<ng-template #elseBlockNameIsWhateverYouWant>
+  <p class="not-found">No body content found</p>
+</ng-template>
