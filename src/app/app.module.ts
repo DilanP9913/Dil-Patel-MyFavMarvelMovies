@@ -18,3 +18,4 @@ import { ContentCardComponent } from './content-card/content-card.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
