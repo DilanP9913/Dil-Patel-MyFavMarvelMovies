@@ -6,10 +6,7 @@ import {Content} from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
-  mymarmovie:Content[];
-
-  constructor() {
-    this.mymarmovie = [{
+  content = [{
       id: 0,
       title: 'IronMan',
       description: "Armour Power",
@@ -34,10 +31,12 @@ export class ContentListComponent implements OnInit {
       type: "Comedy",
       tags: ["action", "Sci-fi", "fight"]
     }
-    ]
-  }
-
-  ngOnInit(): void {
-  }
-
+    ];
+ showIDAndTitle(id: number, title:string){
+   console.log('Content id: ${id}, title: ${title}');
+ }
+ constructor() {
+ }
+ ngOnInit() {
+ }
 }
