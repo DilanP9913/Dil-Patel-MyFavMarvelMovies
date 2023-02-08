@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "generatecomponent": "command-to-generate-component",
-    "generatepipe":"command-to-generate-pipe",
+    "generatepipe": "command-to-generate-pipe",
     "generatedirective": "command-to-generate-directive"
   },
   "private": true,

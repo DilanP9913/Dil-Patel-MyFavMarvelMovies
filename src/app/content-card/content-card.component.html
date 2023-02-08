@@ -1,14 +1,16 @@
-<h2 *ngIf="contentItem && contentItem.title else elseBlockNameIsWhateverYouWant">
-  {{ contentItem?.title }}
-</h2>
+<div class="border">
+  <h2 *ngIf="content && content.title else elseBlockNameIsWhateverYouWant">
+      {{ content.title }}
+  </h2>
+  
+  <img *ngIf="content && content.imgURL else elseBlockNameIsWhateverYouWant" [src]="content.imgURL" (click)="pritnItem()">
+  <p class="body" *ngIf="content && content.description; else elseBlockNameIsWhateverYouWant">{{content.description}}</p>
 
-<img *ngIf="contentItem && contentItem.imgURL else elseBlockNameIsWhateverYouWant" [src]="contentItem.imgURL" (click)="myfun()">
-<p class="title" *ngIf="contentItem && contentItem.title; else elseBlockNameIsWhateverYouWant">{{contentItem?.title}}</p>
+  <div class="type"  *ngIf="content && content.type else elseBlockNameIsWhateverYouWant">{{content.type}}</div>
+  <div class="author"  *ngIf="content && content.creator else elseBlockNameIsWhateverYouWant">{{content.creator}}</div>
+  <div class="tags"  *ngIf="content && content.tags else elseBlockNameIsWhateverYouWant">{{content.tags}}</div>
 
-<div class="type"  *ngIf="contentItem && contentItem.type else elseBlockNameIsWhateverYouWant">{{contentItem?.type}}</div>
-<div class="title"  *ngIf="contentItem && contentItem.title else elseBlockNameIsWhateverYouWant">{{contentItem?.title}}</div>
-<div class="tags"  *ngIf="contentItem && contentItem.creator else elseBlockNameIsWhateverYouWant">{{contentItem?.tags}}</div>
-
-<ng-template #elseBlockNameIsWhateverYouWant>
-  <p class="not-found">No body content found</p>
-</ng-template>
+  <ng-template #elseBlockNameIsWhateverYouWant>
+      <p class="not-found" hidden></p>
+  </ng-template>
+</div>  
