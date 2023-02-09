@@ -37,6 +37,33 @@ export class ContentListComponent implements OnInit {
     type: "Comedy",
     tags: ["action", "Sci-fi", "fight"]
   }
+  ,{
+    id: 3,
+    title: 'Spiderman',
+    description: "Spider powersuit",
+    creator: "Stan Lee",
+    imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
+    type: "Comedy",
+    tags: ["action", "Sci-fi", "fight"]
+  }
+  ,{
+    id: 4,
+    title: 'Spiderman',
+    description: "Spider powersuit",
+    creator: "Stan Lee",
+    imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
+    type: "Comedy",
+    tags: ["action", "Sci-fi", "fight"]
+  }
+  ,{
+    id: 5,
+    title: 'Spiderman',
+    description: "Spider powersuit",
+    creator: "Stan Lee",
+    imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
+    type: "Comedy",
+    tags: ["action", "Sci-fi", "fight"]
+  }
 ]
 }
     ngOnInit(): void {
