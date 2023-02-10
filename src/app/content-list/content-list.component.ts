@@ -18,7 +18,7 @@ export class ContentListComponent implements OnInit {
     description: "Armour Power",
     creator: "Stan lee",
     imgURL: "https://www.marvel.com/comics/issue/101529/iron_man_2022_1",
-    type: "action",
+    type: "action | Sci-fi ",
     tags: ['action', "A.I", "robots"]
   },{
     id: 1,
@@ -26,7 +26,7 @@ export class ContentListComponent implements OnInit {
     description: "Magic",
     creator: "Stan Lee",
     imgURL: "https://ultimate-marvel-cinematic-universe.fandom.com/wiki/Doctor_Strange",
-    type: "Sci-fi",
+    type: "Sci-fi | Drama",
     tags: ["Sci-Fi", "magic", "action"]
   },{
     id: 2,
@@ -34,7 +34,7 @@ export class ContentListComponent implements OnInit {
     description: "Spider powersuit",
     creator: "Stan Lee",
     imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
-    type: "Comedy",
+    //type: "Comedy",
     tags: ["action", "Sci-fi", "fight"]
   }
   ,{
@@ -43,7 +43,7 @@ export class ContentListComponent implements OnInit {
     description: "Spider powersuit",
     creator: "Stan Lee",
     imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
-    type: "Comedy",
+    //type: "Comedy",
     tags: ["action", "Sci-fi", "fight"]
   }
   ,{
@@ -57,6 +57,15 @@ export class ContentListComponent implements OnInit {
   }
   ,{
     id: 5,
+    title: 'Spiderman',
+    description: "Spider powersuit",
+    creator: "Stan Lee",
+    imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
+    type: "Comedy | Drama",
+    tags: ["action", "Sci-fi", "fight"]
+  }
+  ,{
+    id: 6,
     title: 'Spiderman',
     description: "Spider powersuit",
     creator: "Stan Lee",
