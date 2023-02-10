@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Optional } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 
 @Component({
@@ -10,7 +10,7 @@ import { Content } from '../helper-files/content-interface';
 export class ContentListComponent implements OnInit {
   
   content: Content[];
-  
+  public inputvalue?: Optional;
   constructor() {
   this.content = [{
     id: 0,
@@ -18,7 +18,7 @@ export class ContentListComponent implements OnInit {
     description: "Armour Power",
     creator: "Stan lee",
     imgURL: "https://www.marvel.com/comics/issue/101529/iron_man_2022_1",
-    type: "action | Sci-fi ",
+    type: "action",
     tags: ['action', "A.I", "robots"]
   },{
     id: 1,
@@ -26,7 +26,7 @@ export class ContentListComponent implements OnInit {
     description: "Magic",
     creator: "Stan Lee",
     imgURL: "https://ultimate-marvel-cinematic-universe.fandom.com/wiki/Doctor_Strange",
-    type: "Sci-fi | Drama",
+    type: "Sci-fi | drama",
     tags: ["Sci-Fi", "magic", "action"]
   },{
     id: 2,
@@ -61,7 +61,7 @@ export class ContentListComponent implements OnInit {
     description: "Spider powersuit",
     creator: "Stan Lee",
     imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
-    type: "Comedy | Drama",
+    type: "Comedy | drama",
     tags: ["action", "Sci-fi", "fight"]
   }
   ,{
@@ -74,7 +74,25 @@ export class ContentListComponent implements OnInit {
     tags: ["action", "Sci-fi", "fight"]
   }
 ]
+this.inputvalue ="";
 }
     ngOnInit(): void {
+  }
+  clickEvent(inputvalue: any): any {
+
+    for(let i = 0;  i < this.content.length; i++) {
+     console.log(this.content[i].type);
+
+      if(this.content[i].type == inputvalue){
+     let abj =  <HTMLInputElement>document.getElementById('aut');
+       abj.innerHTML = 'we found the item with other';
+      }
+     
+    }
+    let abj =  <HTMLInputElement>document.getElementById('aut');
+    if(!abj.innerHTML){
+             abj.innerHTML = 'we can not find the other';
+
+    }
   }
 }

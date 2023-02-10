@@ -1,3 +1,20 @@
-<div>
+<input type="text" for="inputvalue" />
+<button (click)="clickEvent(inputvalue)">Click me</button>
+<div class="aut" id="aut"></div>
+
+<!-- <div>
   <app-content-card *ngFor="let content of content; index as i; first as idFirst; odd as odd; even as even;" [content]="content" class="chess-player-{{i}} border" [class.is-odd]="odd" [class.is-even]="even"></app-content-card>
+</div> -->
+
+<div *ngFor="let content of (content | filter); index as i; first as isfirst; odd as odd; even as even;">
+  <app-content-card *ngIf="content.type=='action'" [content]="content" class="chess-player-{{i}} border" class="action"></app-content-card>
+</div>
+<div *ngFor="let content of (content | filter); index as i; first as isfirst; odd as odd; even as even;">
+  <app-content-card *ngIf="content.type=='drama'" [content]="content" class="chess-player-{{i}} border" class="drama"></app-content-card>
+</div>
+<div *ngFor="let content of (content | filter); index as i; first as isfirst; odd as odd; even as even;">
+  <app-content-card *ngIf="content.type=='fight'" [content]="content" class="chess-player-{{i}} border" class="fight"></app-content-card>
+</div>
+<div *ngFor="let content of (content | filter); index as i; first as isfirst; odd as odd; even as even;">
+  <app-content-card *ngIf="! content.type" [content]="content" class="chess-player-{{i}} border" [class.is-odd]="odd" [class.is-even]="even"></app-content-card>
 </div>

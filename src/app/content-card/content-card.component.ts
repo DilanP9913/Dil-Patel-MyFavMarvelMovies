@@ -10,12 +10,17 @@ export class ContentCardComponent implements OnInit {
  
   @Input() content?: Content;
   private _item: Content[];
+  public inputvalue: string;
   constructor() {
     this._item=[];
+    this.inputvalue ="Button Working";
   }
 
   getItem(): Content[] {
     return this._item;
+  }
+  clickevent(): void{
+    console.log(this.content?.type);
   }
 
   pritnItem() {

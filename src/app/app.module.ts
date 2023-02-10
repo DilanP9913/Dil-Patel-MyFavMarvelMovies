@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { ContentListComponent } from './content-list/content-list.component';
 // @ts-ignore
 import { ContentCardComponent } from './content-card/content-card.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentListComponent,
-    ContentCardComponent
+    ContentCardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule
