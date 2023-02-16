@@ -10,7 +10,11 @@
   <div class="author"  *ngIf="content && content.creator else elseBlockNameIsWhateverYouWant">{{content.creator}}</div>
   <div class="tags"  *ngIf="content && content.tags else elseBlockNameIsWhateverYouWant">{{content.tags}}</div>
 
+  <ng-template #elseBlock>
+    <img [src]="'../assets/images/DefaultIMg.png'" alt="">
+    </ng-template>
+
   <ng-template #elseBlockNameIsWhateverYouWant>
-      <p class="not-found" hidden></p>
+      <p hidden></p>
   </ng-template>
 </div>  
