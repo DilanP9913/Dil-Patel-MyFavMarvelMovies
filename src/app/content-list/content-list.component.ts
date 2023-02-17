@@ -1,5 +1,7 @@
 import { Component, OnInit, Optional } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { TmplAstBoundText } from '@angular/compiler';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-content-list',
