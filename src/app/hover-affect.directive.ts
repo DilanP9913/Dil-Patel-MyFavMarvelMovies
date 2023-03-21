@@ -5,10 +5,10 @@ import { ContentChildren, Directive, ElementRef, HostBinding, HostListener, Inpu
 })
 export class HoverAffectDirective {
 
-  @Input() hoverAffect: string;
-  @HostBinding('style.textDecoration') textDecoration: string;
-  @HostBinding('style.fontWeight') fontWeight: string;
-  @HostBinding('style.border') border: string;
+  @Input() hoverAffect: string='';
+  @HostBinding('style.textDecoration') textDecoration: string='';
+  @HostBinding('style.fontWeight') fontWeight: string='';
+  @HostBinding('style.border') border: string='';
 
   @HostListener('mouseenter') onMouseEnter() {
     if (this.hoverAffect === 'type') {

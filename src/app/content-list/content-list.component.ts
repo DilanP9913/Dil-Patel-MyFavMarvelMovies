@@ -1,7 +1,9 @@
-import { Component, OnInit, Optional } from '@angular/core';
+import { Component, NgModule, OnInit, Optional } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { CreateContentComponent } from '../create-content/create-content.component';
 import { TmplAstBoundText } from '@angular/compiler';
 import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-content-list',
@@ -11,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 
 export class ContentListComponent implements OnInit {
   
-  content: Content[];
+  public content: Content[];
   public inputvalue?: Optional;
   constructor() {
   this.content = [{
@@ -77,24 +79,68 @@ export class ContentListComponent implements OnInit {
   }
 ]
 this.inputvalue ="";
+
 }
     ngOnInit(): void {
   }
-  clickEvent(inputvalue: any): any {
-
+  clickEvent(): any {
+  
     for(let i = 0;  i < this.content.length; i++) {
      console.log(this.content[i].type);
-
-      if(this.content[i].type == inputvalue){
-     let abj =  <HTMLInputElement>document.getElementById('aut');
-       abj.innerHTML = 'we found the item with other';
+     let abj =  <HTMLInputElement>document.getElementById('aut');   
+     console.log(abj.value);
+     if(this.content[i].type === abj.value){
+       let out= <HTMLInputElement>document.getElementById('msg');
+        out.innerHTML = 'we found the item with other';
       }
-     
-    }
-    let abj =  <HTMLInputElement>document.getElementById('aut');
-    if(!abj.innerHTML){
-             abj.innerHTML = 'we can not find the other';
-
     }
   }
+  
+  filteredContents: Content[] = [];
+  filterText: string='';
+  errorMessage: string='';
+
+  onContentCreated(content: Content) {
+    this.addContent(content)
+      .then(() => {
+        console.log(`Successfully added ${content.title}.`);
+        this.errorMessage = '';
+      })
+      .catch(() => {
+        console.error(`Failed to add ${content.title}.`);
+        this.errorMessage = 'Failed to add content.';
+      });
+  }
+
+  addContent(content: Content): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const requiredFields = ['id', 'title', 'description', 'creator'];
+      const missingFields = requiredFields.filter(type => !content[type]);
+      if (missingFields.length > 0) {
+        reject();
+        this.errorMessage = `Please fill in the required fields: ${missingFields.join(', ')}.`;
+        return;
+      }
+      const existingContent = this.content.find(c => c.id === content.id);
+      if (existingContent) {
+        reject();
+        this.errorMessage = `Content with ID ${content.id} already exists.`;
+        return;
+      }
+      const clonedContent = { ...content };
+      this.content.push(clonedContent);
+      this.filterContents();
+      resolve();
+    });
+  }
+
+  filterContents() {
+    this.filteredContents = this.content.filter(content => {
+      const filterText = this.filterText ? this.filterText.toLowerCase() : '';
+      const contentTitle = content.title.toLowerCase();
+      const contentDescription = content.description.toLowerCase();
+      return contentTitle.includes(filterText) || contentDescription.includes(filterText);
+    });
+  }
+  
 }
