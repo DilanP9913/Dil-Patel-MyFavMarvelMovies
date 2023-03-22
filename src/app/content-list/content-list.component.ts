@@ -30,7 +30,7 @@ export class ContentListComponent implements OnInit {
     description: "Magic",
     creator: "Stan Lee",
     imgURL: "https://ultimate-marvel-cinematic-universe.fandom.com/wiki/Doctor_Strange",
-    type: "Sci-fi | drama",
+    type: "drama",
     tags: ["Sci-Fi", "magic", "action"]
   },{
     id: 2,
@@ -65,7 +65,7 @@ export class ContentListComponent implements OnInit {
     description: "Spider powersuit",
     creator: "Stan Lee",
     imgURL: "https://www.marvel.com/characters/spider-man-peter-parker",
-    type: "Comedy | drama",
+    type: "drama",
     tags: ["action", "Sci-fi", "fight"]
   }
   ,{
