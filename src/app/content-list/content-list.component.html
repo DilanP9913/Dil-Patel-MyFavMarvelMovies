@@ -1,7 +1,22 @@
-<input type="text" for="inputvalue" />
+<!-- <input type="text" for="inputvalue" />
 <button (click)="clickEvent(inputvalue)">Click me</button>
-<div class="aut" id="aut"></div>
+<div class="aut" id="aut"></div> -->
+<br>
+<br>
 
+
+<input [(ngModel)]="inputId" type="number" placeholder="Enter ID">
+<button (click)="onButtonClick()">Load Content</button>
+<br>
+
+<app-messages></app-messages>
+
+<br><br>
+
+
+<app-content-card [content]="selectedContent"></app-content-card>
+<br>
+<br>
 <!-- <div>
   <app-content-card *ngFor="let content of content; index as i; first as idFirst; odd as odd; even as even;" [content]="content" class="chess-player-{{i}} border" [class.is-odd]="odd" [class.is-even]="even"></app-content-card>
 </div> -->
