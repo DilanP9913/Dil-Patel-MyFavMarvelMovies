@@ -2,7 +2,7 @@ import { Component, OnInit, Optional } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { TmplAstBoundText } from '@angular/compiler';
 import { FormsModule } from '@angular/forms';
-import { content } from '../helper-files/ContenDb';
+import { content } from '../helper-files/contenDb';
 import { MarvelMoviesService } from '../marvel-movies.service';
 import { MessageService } from '../message.service';
 
