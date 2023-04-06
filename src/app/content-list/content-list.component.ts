@@ -41,7 +41,11 @@ export class ContentListComponent implements OnInit {
       this.messages.add('Error: Invalid input or ID out of range.');
     }
   }
+  onContentAdded(content: Content) {
+    this.content.push(content);
+  }
 }
+
   // clickEvent(inputvalue: any): any {
 
   //   for(let i = 0;  i < this.content.length; i++) {

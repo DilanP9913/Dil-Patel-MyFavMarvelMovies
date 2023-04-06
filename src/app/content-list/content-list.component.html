@@ -6,6 +6,7 @@
 <br>
 <br>
 
+
 <app-modify-content></app-modify-content>
 
 <br>
@@ -33,7 +34,7 @@
 <br>
 
 <ul>
-  <li *ngFor="let content of (content | fliter)">
+  <li *ngFor="let content of (content)">
       <h1>{{content.id}}</h1>
     <h3>{{content.title}}</h3>
     <p>{{content.description}}</p>

@@ -28,7 +28,6 @@ import { MarvelMoviesService } from './marvel-movies.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClient,
     InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
   providers: [ MarvelMoviesService],
