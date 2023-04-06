@@ -13,6 +13,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClient } from '@angular/common/http';
 import { MarvelMoviesService } from './marvel-movies.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MarvelMoviesService } from './marvel-movies.service';
   imports: [
     BrowserModule,
     FormsModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService)
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    BrowserAnimationsModule
   ],
   providers: [ MarvelMoviesService],
   bootstrap: [AppComponent]
