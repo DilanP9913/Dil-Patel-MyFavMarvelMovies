@@ -2,6 +2,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { MarvelMoviesService } from '../marvel-movies.service';
 import { MessageService } from '../message.service';
 import { Content } from '../helper-files/content-interface';
+import { MatDialog} from '@angular/material/dialog';
+import { AddContentDialogComponent } from '../add-content-dialog/add-content-dialog.component';
 
 @Component({
   selector: 'app-modify-content',
@@ -17,8 +19,21 @@ export class ModifyContentComponent {
 
   @Output() contentAdded = new EventEmitter<Content>();
 
-  constructor(private contentService: MarvelMoviesService, private messageService: MessageService) { }
+  constructor(private contentService: MarvelMoviesService, private messageService: MessageService, private dialog: MatDialog) { }
 
+  openAddContentDialog(): void {
+    const dialogRef = this.dialog.open(AddContentDialogComponent, {
+      width: '400px',
+      data: {}
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.addContent(result);
+      }
+    });
+  }
+  
   addContent(newContent: Content) {
     this.contentService.addContent(newContent)
       .subscribe(content => {

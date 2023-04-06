@@ -16,6 +16,7 @@ import { MarvelMoviesService } from './marvel-movies.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule} from '@angular/material/input';
+import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MatInputModule} from '@angular/material/input';
     FilterPipe,
     HoverAffectDirective,
     MessagesComponent,
-    ModifyContentComponent
+    ModifyContentComponent,
+    AddContentDialogComponent
   ],
   imports: [
     BrowserModule,
