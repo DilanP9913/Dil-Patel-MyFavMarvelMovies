@@ -1,6 +1,6 @@
 {
   "name": "dil-patel-my-fav-marvel-movies",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
