@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { content } from './helper-files/ContenDb';
+import { content } from './helper-files/contenDb';
 import { MessageService } from './message.service';
 
 @Injectable({

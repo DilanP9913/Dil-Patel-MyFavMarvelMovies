@@ -3,11 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ContentListComponent } from './content-list/content-list.component';
-// @ts-ignore
+
 import { ContentCardComponent } from './content-card/content-card.component';
 import { FilterPipe } from './filter.pipe';
 import { HoverAffectDirective } from './hover-affect.directive';
 import { MessagesComponent } from './messages/messages.component';
+import { ModifyContentComponent } from './modify-content/modify-content.component';
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClient } from '@angular/common/http';
+import { MarvelMoviesService } from './marvel-movies.service';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +22,16 @@ import { MessagesComponent } from './messages/messages.component';
     ContentCardComponent,
     FilterPipe,
     HoverAffectDirective,
-    MessagesComponent
+    MessagesComponent,
+    ModifyContentComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClient,
+    InMemoryWebApiModule.forRoot(InMemoryDataService)
   ],
-  providers: [],
+  providers: [ MarvelMoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
