@@ -24,6 +24,21 @@
 <app-content-card [content]="selectedContent"></app-content-card>
 <br>
 <br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<ul>
+  <li *ngFor="let content of (content | fliter)">
+      <h1>{{content.id}}</h1>
+    <h3>{{content.title}}</h3>
+    <p>{{content.description}}</p>
+  </li>
+</ul>
 <!-- <div>
   <app-content-card *ngFor="let content of content; index as i; first as idFirst; odd as odd; even as even;" [content]="content" class="chess-player-{{i}} border" [class.is-odd]="odd" [class.is-even]="even"></app-content-card>
 </div> -->
