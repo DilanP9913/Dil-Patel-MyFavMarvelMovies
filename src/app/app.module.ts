@@ -18,6 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatInputModule} from '@angular/material/input';
 import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
 import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
 @NgModule({
@@ -38,10 +39,15 @@ import { ContentDetailComponent } from './content-detail/content-detail.componen
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    BrowserModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [ MarvelMoviesService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
 

@@ -1,1 +1,6 @@
-<p>content-detail works!</p>
+<div *ngIf="content">
+    <h2>{{ content.title }}</h2>
+    <p>By {{ content.author }}</p>
+    <p>{{ content.content }}</p>
+  </div>
+  
