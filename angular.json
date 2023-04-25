@@ -7,7 +7,15 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "architect": {
+            "build": {
+              "builder": "@angular-devkit/build-angular:browser",
+              "options": {
+                "serviceWorker": true,
+                "ngswConfigPath": "src/ngsw-config.json"
+              }
+            }
         }
       },
       "root": "",
@@ -103,4 +111,6 @@
       }
     }
   }
+  }
 }
+    
